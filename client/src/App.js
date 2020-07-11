@@ -11,7 +11,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Welcome to React</h2>
       </div>
-      <p className="App-intro">
+      <p className="App-intro stuff">
         To get started, edit <code>src/App.js</code> and save to reload.
       </p>
     </div>
