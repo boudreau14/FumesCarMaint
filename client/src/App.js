@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Wrapper from "./components/Wrapper";
 import Register from "./pages/Register";
 import Main from "./pages/Main";
+import Footer from "./components/Footer";
+import Login from "./pages/Login"
 
 //Bryan is our master!
 
@@ -16,7 +18,9 @@ function App() {
         <Wrapper>
           <Route exact path="/" component={Main} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
         </Wrapper>
+        <Footer />
       </div>
     </Router>
   );

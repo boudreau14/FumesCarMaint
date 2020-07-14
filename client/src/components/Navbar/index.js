@@ -5,12 +5,19 @@ import "./style.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light">
+      <div className="container">
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+    <span className="navbar-toggler-icon" />
+  </button>
+<div className="navbar-collapse collapse" id="navbar10">
+
+
       <Link className="navbar-brand" to="/">
         Car App
       </Link>
       <div>
-        <ul className="navbar-nav">
+        <ul className="navbar-nav nav-fill w-100">
           <li className="nav-item">
             <Link
               to="/"
@@ -48,6 +55,8 @@ function Navbar() {
             </Link>
           </li>
         </ul>
+      </div>
+      </div>
       </div>
     </nav>
   );
