@@ -8,7 +8,6 @@ import Main from "./pages/Main";
 import Footer from "./components/Footer";
 import Login from "./pages/Login"
 
-//Bryan is our master!
 
 function App() {
   return (
@@ -25,6 +24,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;
