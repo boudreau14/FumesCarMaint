@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Services(props) {
+function Services() {
     return (
         <div className="card">
             <h5 className="card-header info-color white-text text-center py-4">
