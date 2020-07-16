@@ -1,26 +1,35 @@
 import React, { useState } from "react";
 import api from "../utils/api";
-
 function Register() {
   const [firstName, setFirstName] = useState([]);
   const [lastName, setLastName] = useState([]);
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
   const [phone, setPhone] = useState([]);
-
-  const registerSubmit = e => {
+  const [street, setStreet] = useState([]);
+  const [city, setCity] = useState([]);
+  const [state, setState] = useState([]);
+  const [zip, setZip] = useState([]);
+  const [make, setMake] = useState([]);
+  const [model, setModel] = useState([]);
+  const registerSubmit = (e) => {
     e.preventDefault();
-    api.register({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-      phone: phone
-    }).then(res =>
-      console.log(res.data)
-    )
+    api
+      .register({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+        phone: phone,
+        street: street,
+        city: city,
+        state: state,
+        zip: zip,
+        make: make,
+        model: model,
+      })
+      .then((res) => console.log(res.data));
   };
-
   return (
     <div className="card">
       {" "}
@@ -36,31 +45,39 @@ function Register() {
             type="text"
             id="materialRegisterFormFirstName"
             className="form-control"
-            onChange={e => setFirstName(e.target.value)}
+            placeholder="First name"
+            onChange={(e) => setFirstName(e.target.value)}
           />{" "}
-          <label htmlFor="materialRegisterFormFirstName">First name</label>{" "}
           <input
-            type="email"
+            type="text"
             id="materialRegisterFormLastName"
             className="form-control"
-            onChange={e => setLastName(e.target.value)}
+            placeholder="Last Name"
+            onChange={(e) => setLastName(e.target.value)}
           />{" "}
-          <label htmlFor="materialRegisterFormLastName">Last name</label>{" "}
+          <input
+            type="phone"
+            id="materialRegisterFormPhone"
+            className="form-control"
+            aria-describedby="materialRegisterFormPhoneHelpBlock"
+            placeholder="Phone Number"
+            onChange={(e) => setPhone(e.target.value)}
+          />{" "}
           <input
             type="email"
             id="materialRegisterFormEmail"
             className="form-control"
-            onChange={e => setEmail(e.target.value)}
+            placeholder="Email Address"
+            onChange={(e) => setEmail(e.target.value)}
           />{" "}
-          <label htmlFor="materialRegisterFormEmail">E-mail</label>{" "}
           <input
             type="password"
             id="materialRegisterFormPassword"
             className="form-control"
-            onChange={e => setPassword(e.target.value)}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
             aria-describedby="materialRegisterFormPasswordHelpBlock"
           />{" "}
-          <label htmlFor="materialRegisterFormPassword">Password</label>{" "}
           <small
             id="materialRegisterFormPasswordHelpBlock"
             className="form-text text-muted mb-4"
@@ -68,33 +85,55 @@ function Register() {
             {" "}
             At least 8 characters and 1 digit{" "}
           </small>{" "}
-          <input
-            type="password"
-            id="materialRegisterFormPhone"
-            className="form-control"
-            aria-describedby="materialRegisterFormPhoneHelpBlock"
-            onChange={e => setPhone(e.target.value)}
-          />{" "}
-          <label htmlFor="materialRegisterFormPhone">Phone number</label>{" "}
-          <small
-            id="materialRegisterFormPhoneHelpBlock"
-            className="form-text text-muted mb-4"
-          >
-            {" "}
-            Optional - for two step authentication{" "}
-          </small>{" "}
+          
           <div className="form-check">
             {" "}
             <input
-              type="checkbox"
-              className="form-check-input"
-              id="materialRegisterFormNewsletter"
+              type="text"
+              id="StreetAddress"
+              className="form-control"
+              placeholder="Street Address"
+              onChange={(e) => setStreet(e.target.value)}
+            />{" "}
+            <input
+              type="text"
+              id="City"
+              className="form-control"
+              placeholder="City"
+              onChange={(e) => setCity(e.target.value)}
+            />{" "}
+            <input
+              type="text"
+              id="State"
+              className="form-control"
+              placeholder="State (ex. OH)"
+              onChange={(e) => setState(e.target.value)}
+            />{" "}
+            <input
+              type="number"
+              id="zip"
+              className="form-control"
+              placeholder="Zip Code (ex. 12345)"
+              onChange={(e) => setZip(e.target.value)}
+            />{" "}
+            <input
+              type="text"
+              id="Make"
+              className="form-control"
+              placeholder="Make (ex. Ford)"
+              onChange={(e) => setMake(e.target.value)}
+            />{" "}
+            <input
+              type="text"
+              id="Model"
+              className="form-control"
+              placeholder="Model (ex. Mustang)"
+              onChange={(e) => setModel(e.target.value)}
             />{" "}
             <label
               className="form-check-label"
               htmlFor="materialRegisterFormNewsletter"
             >
-              Subscribe to our newsletter
             </label>{" "}
           </div>{" "}
           <button
