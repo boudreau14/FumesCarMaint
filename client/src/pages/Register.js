@@ -45,7 +45,7 @@ function Register() {
             type="text"
             id="materialRegisterFormFirstName"
             className="form-control"
-            placeholder="First name"
+            placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
           />{" "}
           <input
