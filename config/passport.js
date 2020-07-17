@@ -6,6 +6,7 @@ passport.use(
   new LocalStrategy(
     {
       usernameField: "email",
+      passwordField: "password"
     },
     function (email, password, done) {
       models.User.findOne({
@@ -15,7 +16,7 @@ passport.use(
       }).then(function (dbUser) {
         if (!dbUser) {
           return done(null, false, { message: "Incorrect Email Address" });
-        } else if (!dbUser.validPassword(password)) {
+        } else if (dbUser.password != password) {
           return done(null, false, { message: "Incorrect Password" });
         }
         return done(null, dbUser);
