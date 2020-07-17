@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import api from "../utils/api";
+import { Alert } from "reactstrap";
+
 function Register() {
   const [firstName, setFirstName] = useState([]);
   const [lastName, setLastName] = useState([]);
@@ -12,6 +14,7 @@ function Register() {
   const [zip, setZip] = useState([]);
   const [make, setMake] = useState([]);
   const [model, setModel] = useState([]);
+  
   const registerSubmit = (e) => {
     e.preventDefault();
     api
@@ -141,7 +144,7 @@ function Register() {
             type="submit"
             onClick={registerSubmit}
           >
-            Sign in
+            Register
           </button>{" "}
         </form>{" "}
       </div>
