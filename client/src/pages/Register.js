@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import api from "../utils/api";
-import { Alert } from "reactstrap";
+import { useHistory } from "react-router-dom";
 
 function Register() {
   const [firstName, setFirstName] = useState([]);
@@ -14,6 +14,8 @@ function Register() {
   const [zip, setZip] = useState([]);
   const [make, setMake] = useState([]);
   const [model, setModel] = useState([]);
+
+  let history = useHistory();
   
   const registerSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +33,10 @@ function Register() {
         make: make,
         model: model,
       })
-      .then((res) => console.log(res.data));
+      .then((res) => {
+        console.log(res.data);
+        history.push("/");
+      });
   };
   return (
     <div className="card">
