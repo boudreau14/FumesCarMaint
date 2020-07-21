@@ -21,14 +21,10 @@ function App() {
         </Wrapper>
         <Footer />
       </div>
-<<<<<<< HEAD
-      <p className="App-intro stuff">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-    </div>
-=======
+
+
     </Router>
->>>>>>> 387a7a4520274af3847deb2b3f96956601a1f71d
+
   );
 }
 
