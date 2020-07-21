@@ -3,61 +3,46 @@ import "./style.css";
 
 function Footer() {
   return (
-    <footer className="footer">
-  <div className="footer_content">
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <div className="footer_logo text-center"><a href="#"><img src="images/logo_3.png" alt /></a></div>
+   <footer className="section footer-classic context-dark">
+  <div className="container">
+    <div className="row row-30">
+      <div className="col-md-4 col-xl-5">
+        <div className="pr-xl-4"><a className="brand" href="index.html"><img className="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt width={140} height={37} srcSet="images/agency/logo-retina-inverse-280x74.png 2x" /></a>
+          <h3>FUMES</h3>
+          <p>Take the hastle out of car care. Join us today!</p>
+          <p className="rights"><span>©&nbsp; </span><span className="copyright-year">2020</span><span>&nbsp;</span><span>Fumes</span><span>.&nbsp;</span><span>All Rights Reserved.</span></p>
         </div>
       </div>
-      <div className="row footer_row">
-        <div className="col-lg-4 footer_col">
-          <div className="footer_item text-center">
-            <div className="footer_icon d-flex flex-column align-items-center justify-content-center ml-auto mr-auto">
-              <div><img src="assets/phone.png" alt="phone" /></div>
-            </div>
-            <div className="footer_title">talk to me</div>
-            <div className="footer_list">
-              <ul>
-                <p>+1 330 571 3020</p>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-4 footer_col">
-          <div className="footer_item text-center">
-            <div className="footer_icon d-flex flex-column align-items-center justify-content-center ml-auto mr-auto">
-              <div><img src="assets/email.png" alt="email" /></div>
-            </div>
-            <div className="footer_title">connect</div>
-            <div className="footer_list">
-              <ul>
-                <p>dfuenning@gmail.com</p>
-                <a href="https://github.com/DFuenning" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/derekfuenning/" target="_blank">linkedin</a>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-4 footer_col">
-          <div className="footer_item text-center">
-            <div className="footer_icon d-flex flex-column align-items-center justify-content-center ml-auto mr-auto">
-              <div><img src="assets/location.png" alt="location" /></div>
-            </div>
-            <div className="footer_title">location</div>
-            <div className="footer_list">
-              <ul>
-                <p>Akron, OH</p>
-                <p style={{color: 'rgb(255, 123, 0)'}}>Go Browns</p>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div className="col-md-4">
+        <h5>Contacts</h5>
+        <dl className="contact-list">
+          <dt>Address:</dt>
+          <dd>123 Main Street, Cleveland, OH</dd>
+        </dl>
+        <dl className="contact-list">
+          <dt>email:</dt>
+          <dd><a href="mailto:#">FumesApp@gmail.com</a></dd>
+        </dl>
+        <dl className="contact-list">
+          <dt>phones:</dt>
+          <dd><a href="tel:#">+1 330-867-5309</a>
+          </dd>
+        </dl>
+      </div>
+      <div className="col-md-4 col-xl-3">
+        <h5>Links</h5>
+        <ul className="nav-list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacts</a></li>
+          <li><a href="#">Pricing</a></li>
+        </ul>
       </div>
     </div>
   </div>
 </footer>
+
 
   );
 }
