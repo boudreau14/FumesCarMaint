@@ -7,7 +7,8 @@ import Register from "./pages/Register";
 import Main from "./pages/Main";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
-import Services from "./pages/Services"
+import Services from "./pages/Services";
+import Member from "./pages/Member"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Navbar />
         <Wrapper>
           <Route exact path="/" component={Main} />
+          <Route exact path="/member" component={Member} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/services" component={Services} />
