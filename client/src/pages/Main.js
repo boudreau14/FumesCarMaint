@@ -152,7 +152,8 @@ function Main() {
             <p><strong>Step 3:</strong> Mechanic arrives at the scheduled time to your home</p>
           </div>
         </div>
-      </article></div>
+      </article>
+      </div>
     
     )
 }
