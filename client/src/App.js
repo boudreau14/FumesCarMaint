@@ -6,7 +6,8 @@ import Wrapper from "./components/Wrapper";
 import Register from "./pages/Register";
 import Main from "./pages/Main";
 import Footer from "./components/Footer";
-import Login from "./pages/Login"
+import Login from "./pages/Login";
+import Services from "./pages/Services"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/services" component={Services} />
         </Wrapper>
         <Footer />
       </div>
