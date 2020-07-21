@@ -352,21 +352,12 @@ input:focus {
 
 }
 
-.mainList li:before {
-	background-image: url("wrench.png");
-	height: 40px;
-	width: 40px;
-}
+
 
 .mainList {
 	margin: auto 10%;
 }
 
-.wrench {
-	height: 40px;
-	width: 40px;
-	margin-right: 10px;
-}
 
 #center {
 	display: flex;
