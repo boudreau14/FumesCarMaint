@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import api from "../utils/api";
+import { useHistory } from "react-router-dom";
 
 function Register() {
   const [firstName, setFirstName] = useState([]);
@@ -7,106 +8,188 @@ function Register() {
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
   const [phone, setPhone] = useState([]);
+  const [street, setStreet] = useState([]);
+  const [city, setCity] = useState([]);
+  const [state, setState] = useState([]);
+  const [zip, setZip] = useState([]);
+  const [make, setMake] = useState([]);
+  const [model, setModel] = useState([]);
 
-  const registerSubmit = e => {
+  let history = useHistory();
+  
+  const registerSubmit = (e) => {
     e.preventDefault();
-    api.register({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-      phone: phone
-    }).then(res =>
-      console.log(res.data)
-    )
+    api
+      .register({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+        phone: phone,
+        street: street,
+        city: city,
+        state: state,
+        zip: zip,
+        make: make,
+        model: model,
+      })
+      .then((res) => {
+        console.log(res.data);
+        history.push("/");
+      });
   };
-
   return (
-    <div className="card">
-      {" "}
-      <h5 className="card-header info-color white-text text-center py-4">
-        {" "}
-        <strong>Sign up</strong>{" "}
-      </h5>{" "}
-      <div className="card-body px-lg-5 pt-0">
-        {" "}
-        <form className="md-form" style={{ color: "#757575" }}>
-          {" "}
-          <input
-            type="text"
-            id="materialRegisterFormFirstName"
-            className="form-control"
-            onChange={e => setFirstName(e.target.value)}
-          />{" "}
-          <label htmlFor="materialRegisterFormFirstName">First name</label>{" "}
-          <input
-            type="email"
-            id="materialRegisterFormLastName"
-            className="form-control"
-            onChange={e => setLastName(e.target.value)}
-          />{" "}
-          <label htmlFor="materialRegisterFormLastName">Last name</label>{" "}
-          <input
-            type="email"
-            id="materialRegisterFormEmail"
-            className="form-control"
-            onChange={e => setEmail(e.target.value)}
-          />{" "}
-          <label htmlFor="materialRegisterFormEmail">E-mail</label>{" "}
-          <input
-            type="password"
-            id="materialRegisterFormPassword"
-            className="form-control"
-            onChange={e => setPassword(e.target.value)}
-            aria-describedby="materialRegisterFormPasswordHelpBlock"
-          />{" "}
-          <label htmlFor="materialRegisterFormPassword">Password</label>{" "}
-          <small
-            id="materialRegisterFormPasswordHelpBlock"
-            className="form-text text-muted mb-4"
-          >
-            {" "}
-            At least 8 characters and 1 digit{" "}
-          </small>{" "}
-          <input
-            type="password"
-            id="materialRegisterFormPhone"
-            className="form-control"
-            aria-describedby="materialRegisterFormPhoneHelpBlock"
-            onChange={e => setPhone(e.target.value)}
-          />{" "}
-          <label htmlFor="materialRegisterFormPhone">Phone number</label>{" "}
-          <small
-            id="materialRegisterFormPhoneHelpBlock"
-            className="form-text text-muted mb-4"
-          >
-            {" "}
-            Optional - for two step authentication{" "}
-          </small>{" "}
-          <div className="form-check">
-            {" "}
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="materialRegisterFormNewsletter"
-            />{" "}
-            <label
-              className="form-check-label"
-              htmlFor="materialRegisterFormNewsletter"
-            >
-              Subscribe to our newsletter
-            </label>{" "}
-          </div>{" "}
-          <button
-            className="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-            type="submit"
-            onClick={registerSubmit}
-          >
-            Sign in
-          </button>{" "}
-        </form>{" "}
+    <div className="container register">
+        
+  <div className="row">
+  
+    <div className="col-md-3 register-left">
+    
+      <img src="https://i.ibb.co/LNpS6vD/iconfinder-wrench-1608741.png" alt="iconfinder-wrench-1608741" border={0} />
+      
+      <h3>Welcome</h3>
+      
+      <p>You are 30 seconds away from requesting service!</p>
+      
+      <input type="submit" name defaultValue="Login" />
+      
+      <br />
+      
+    </div>
+    <div className="col-md-9 register-right">
+        
+      <div className="tab-content" id="myTabContent">
+          
+        <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            
+          <h3 className="register-heading">Fumes Registration</h3>
+          
+          <div className="row register-form">
+              
+            <div className="col-md-6">
+                
+              <div className="form-group">
+                  
+                <input 
+                id="materialRegisterFormFirstName" 
+                type="text" 
+                className="form-control" 
+                placeholder="First Name *"
+                onChange={(e) => setFirstName(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input 
+                id="materialRegisterFormLastName"
+                type="text" 
+                className="form-control" 
+                placeholder="Last Name *" 
+                onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input 
+                id="materialRegisterFormPassword" 
+                type="password" 
+                className="form-control" 
+                placeholder="Password *" 
+                onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input 
+                id="City" 
+                type="text" 
+                className="form-control"
+                placeholder="City (ex. Akron) *"
+                onChange={(e) => setCity(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input 
+                id="Make" 
+                type="text" 
+                className="form-control" 
+                placeholder="Car Make *" 
+                onChange={(e) => setMake(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input 
+                id="Model" 
+                type="text"
+                className="form-control" 
+                placeholder="Car Model *" 
+                onChange={(e) => setModel(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="form-group">
+                <input 
+                id="materialRegisterFormEmail" 
+                type="email" 
+                className="form-control" 
+                placeholder="Your Email *" 
+                onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input 
+                id="materialRegisterFormPhone" 
+                type="text" 
+                minLength={10} 
+                maxLength={10} 
+                name="txtEmpPhone" 
+                className="form-control" 
+                placeholder="Your Phone *" 
+                onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input 
+                id="StreetAddress" 
+                type="text" 
+                className="form-control" 
+                placeholder="Street Address *" 
+                onChange={(e) => setStreet(e.target.value)}
+                 />
+              </div>
+              <div className="form-group">
+                <input 
+                id="Zip" 
+                type="text" 
+                className="form-control" 
+                placeholder="Zip (ex.12345) *" 
+                onChange={(e) => setZip(e.target.value)}
+                 />
+              </div>
+              <div className="form-group">
+                <input 
+                id="State" 
+                type="text" 
+                className="form-control"
+                placeholder="State (ex. OH) *"
+                onChange={(e) => setState(e.target.value)}
+                />
+              </div>
+              
+              <button 
+              type="submit" 
+              className="btnRegister" 
+              value="Register"
+              onClick={registerSubmit}
+              >
+                  Register</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+        
   );
 }
 export default Register;

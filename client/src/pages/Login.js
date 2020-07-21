@@ -1,80 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import api from "../utils/api";
+import { useHistory } from "react-router-dom";
+
 
 function Login() {
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
 
-  const logInSubmit = e => {
+  let history = useHistory();
+
+  const logInSubmit = (e) => {
     e.preventDefault();
-    api.logIn({
-      email: email,
-      password: password,
-    }).then(res =>
-      console.log(res.data)
-    )
+    api
+      .logIn({
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res.data);
+        history.push("/");
+      });
   };
 
   return (
-    <form className="border border-light p-5">
-      <p className="h4 mb-4 text-center">Sign in</p>
-      <input
-        type="email"
-        id="defaultLoginFormEmail"
-        className="form-control mb-4"
-        placeholder="E-mail"
-        onChange={e => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        id="defaultLoginFormPassword"
-        className="form-control mb-4"
-        placeholder="Password"
-        onChange={e => setPassword(e.target.value)}
-      />
-      <div className="d-flex justify-content-between">
-        <div>
-          <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="defaultLoginFormRemember"
-            />
-            <label
-              className="custom-control-label"
-              htmlFor="defaultLoginFormRemember"
-            >
-              Remember me
-            </label>
+   <form>
+  <div className="container register">
+    <div className="row">
+      <div className="col-md-3 register-left">
+        <img src="https://i.ibb.co/LNpS6vD/iconfinder-wrench-1608741.png" alt="iconfinder-wrench-1608741" border={0} />
+        <h3>Welcome</h3>
+        <p>You are 30 seconds away from requesting service!</p>
+      </div>
+      <div className="col-md-9 register-right">
+        <div className="tab-content" id="myTabContent">
+          <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <h3 className="register-heading">Fumes Login</h3>
+            <div className="row register-form">
+              <div className="col-md-12">
+                <div className="form-group">
+                  <input type="email" 
+                  className="form-control" 
+                  placeholder="Email *" 
+                  onChange={(e) => setEmail(e.target.value)}
+                   />
+                </div>
+                <div className="form-group">
+                  <input id="materialRegisterFormPassword" 
+                  type="password" 
+                  className="form-control" 
+                  placeholder="Password *"
+                  onChange={(e) => setPassword(e.target.value)}
+                   />
+                </div>
+                <button type="submit" 
+                className="btnRegister" 
+                value="Login"
+                onClick={logInSubmit}
+                >Login</button>
+              </div>
+            </div>
           </div>
         </div>
-        <div>
-          <a href>Forgot password?</a>
-        </div>
       </div>
-      <button className="btn btn-info btn-block my-4" type="submit" onClick={logInSubmit}>
-        Sign in
-      </button>
-      <div className="text-center">
-        <p>
-          Not a member?
-          <a href="/Register">Register</a>
-        </p>
-        <p>or sign in with:</p>
-        <a type="button" className="light-blue-text mx-2">
-          <i className="fab fa-facebook-f" />
-        </a>
-        <a type="button" className="light-blue-text mx-2">
-          <i className="fab fa-twitter" />
-        </a>
-        <a type="button" className="light-blue-text mx-2">
-          <i className="fab fa-linkedin-in" />
-        </a>
-        <a type="button" className="light-blue-text mx-2">
-          <i className="fab fa-github" />
-        </a>
-      </div>
-    </form>
+    </div>
+  </div>
+</form>
+
   );
 }
 
