@@ -140,15 +140,15 @@ function Main() {
         </div>
         <div className="steps">
           <div>
-            <img src="assets/newRegis.png" alt="register" />
+            <img src="../assets/newRegis.png" alt="register" />
             <p><strong>Step 1:</strong> Fill out the registration form</p>
           </div>
           <div>
-            <img src="assets/newForm.png" alt="register" />
+            <img src="../assets/newForm.png" alt="register" />
             <p><strong>Step 2:</strong> Schedule service for your vehicle</p>
           </div>
           <div>
-            <img src="assets/newMech.png" alt="register" />
+            <img src="../assets/newMech.png" alt="register" />
             <p><strong>Step 3:</strong> Mechanic arrives at the scheduled time to your home</p>
           </div>
         </div>
