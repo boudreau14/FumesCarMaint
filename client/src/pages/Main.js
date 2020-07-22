@@ -1,12 +1,16 @@
 import React from 'react';
-// import Hero from "../components/Hero";
-// import Container from "../components/Container";
-// import Row from "../components/Row";
-// import Col from "../components/Col";
+import newRegis from "../assets/newRegis.png";
+import newForm from "../assets/newForm.png";
+import newMech from "../assets/newMech.png";
+import HERO from "../components/Hero";
+import Footer from "../components/Footer";
+import NavWhite from "../components/WhiteNav"
 
 function Main() {
     return (
-      <div>
+      <>
+      <HERO backgroundImage="https://images.unsplash.com/photo-1508171997656-fdf7cf6c4df9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+      <NavWhite />
       <div id="landCont">
         <div className="landText" id="height">
           <h1>Fumes</h1>
@@ -57,6 +61,8 @@ function Main() {
           </div>
         </div>
       </div>
+     
+      </HERO>
       <section className="mainInfo">
         <div className="container-fluid">
           <div className="row">
@@ -140,21 +146,21 @@ function Main() {
         </div>
         <div className="steps">
           <div>
-            <img src="../assets/newRegis.png" alt="register" />
+            <img src={newRegis} alt="register" />
             <p><strong>Step 1:</strong> Fill out the registration form</p>
           </div>
           <div>
-            <img src="../assets/newForm.png" alt="register" />
+            <img src={newForm} alt="register" />
             <p><strong>Step 2:</strong> Schedule service for your vehicle</p>
           </div>
           <div>
-            <img src="../assets/newMech.png" alt="register" />
+            <img src={newMech} alt="register" />
             <p><strong>Step 3:</strong> Mechanic arrives at the scheduled time to your home</p>
           </div>
         </div>
       </article>
-      </div>
-    
+      <Footer />
+      </>
     )
 }
 

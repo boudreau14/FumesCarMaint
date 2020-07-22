@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import api from "../utils/api";
 import { useHistory } from "react-router-dom";
-
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 function Login() {
   const [email, setEmail] = useState([]);
@@ -23,6 +24,9 @@ function Login() {
   };
 
   return (
+    <>
+    <Navbar />
+    <div className="logBody">
    <form>
   <div className="container register">
     <div className="row">
@@ -65,7 +69,9 @@ function Login() {
     </div>
   </div>
 </form>
-
+</div>
+<Footer />
+</>
   );
 }
 
