@@ -4,12 +4,18 @@ footer {
 
 }
 
-
-
-
+@media (max-width: 414px) {
+	footer{
+		text-align: center;
+	}
+	
+}
 footer h3 {
 	font-family: 'Montserrat Subrayada', sans-serif;
 	letter-spacing: 0;
+}
+footer h5 {
+	text-decoration: underline;
 }
 
 .context-dark,

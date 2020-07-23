@@ -6,8 +6,9 @@ import Navbar from "../components/Navbar";
 function Members () {
     return (
       <>
-      <Navbar />
+      
     <div className="memberBody">
+    <Navbar />
         <Table></Table>
     </div>  
       <Footer />

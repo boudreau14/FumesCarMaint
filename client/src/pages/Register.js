@@ -42,8 +42,9 @@ function Register() {
   };
   return (
     <>
-    <Navbar />
+    
     <div className="regisBody">
+    <Navbar />
     <div className="container register">
         
   <div className="row">

@@ -2,6 +2,7 @@ import React from 'react';
 import newRegis from "../assets/newRegis.png";
 import newForm from "../assets/newForm.png";
 import newMech from "../assets/newMech.png";
+
 import HERO from "../components/Hero";
 import Footer from "../components/Footer";
 import NavWhite from "../components/WhiteNav"
@@ -100,6 +101,7 @@ function Main() {
             </div>
           </div>     
         </div>
+
         <div className="container-fluid" id="center">
           <div className="row">
             <div className="col-12">
@@ -140,6 +142,8 @@ function Main() {
           </div>
         </div>
       </section>
+<div className="parallax">
+
       <article className="howWorks">
         <div id="works">
           <h1>How it Works</h1>
@@ -159,6 +163,7 @@ function Main() {
           </div>
         </div>
       </article>
+      </div>
       <Footer />
       </>
     )
