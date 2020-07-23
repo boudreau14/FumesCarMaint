@@ -9,8 +9,9 @@ function Services () {
     return (
       <>
       
-<Navbar />
+
 <div className="memberBody">
+<Navbar />
       <ServCards />
       </div>
 <Footer />

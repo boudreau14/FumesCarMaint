@@ -25,8 +25,9 @@ function Login() {
 
   return (
     <>
-    <Navbar />
+    
     <div className="logBody">
+    <Navbar />
    <form>
   <div className="container register">
     <div className="row">

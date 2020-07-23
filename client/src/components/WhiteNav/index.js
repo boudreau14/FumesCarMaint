@@ -18,7 +18,7 @@ function WhiteNav() {
                 className={
                   window.location.pathname === "/" || window.location.pathname === "/about"
                     ? "nav-link active"
-                    : "nav-link"
+                    : "nav-link text-white"
                 }
               >
                 Home
@@ -27,15 +27,15 @@ function WhiteNav() {
             <li className="nav-item">
               <Link
                 to="/about"
-                className={window.location.pathname === "/about" ? "nav-link active" : "nav-link"}
+                className={window.location.pathname === "/member" ? "nav-link active" : "nav-link text-white"}
               >
-                About
+                Member
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 to="/services"
-                className={window.location.pathname === "/services" ? "nav-link active" : "nav-link"}
+                className={window.location.pathname === "/services" ? "nav-link active" : "nav-link text-white"}
               >
                 Services
               </Link>
@@ -43,7 +43,7 @@ function WhiteNav() {
             <li className="nav-item">
               <Link
                 to="/register"
-                className={window.location.pathname === "/register" ? "nav-link active" : "nav-link"}
+                className={window.location.pathname === "/register" ? "nav-link active" : "nav-link text-black"}
               >
                 Register
               </Link>
