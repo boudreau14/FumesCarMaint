@@ -20,6 +20,7 @@ function App() {
         
         
           <Route exact path="/" component={Main} />
+          <Route exact path="/member" component={Member} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/services" component={Services} />
@@ -28,6 +29,7 @@ function App() {
        
         
         
+
 
       </div>
 
