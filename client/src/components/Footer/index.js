@@ -7,7 +7,7 @@ function Footer() {
   <div className="container">
     <div className="row row-30">
       <div className="col-md-4 col-xl-5">
-        <div className="pr-xl-4"><a className="brand" href="index.html"><img className="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt width={140} height={37} srcSet="images/agency/logo-retina-inverse-280x74.png 2x" /></a>
+        <div className="pr-xl-4"><a className="brand" href="index.html"></a>
           <h3>FUMES</h3>
           <p>Take the hastle out of car care. Join us today!</p>
           <p className="rights"><span>©&nbsp; </span><span className="copyright-year">2020</span><span>&nbsp;</span><span>Fumes</span><span>.&nbsp;</span><span>All Rights Reserved.</span></p>

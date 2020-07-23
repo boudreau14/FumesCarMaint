@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import api from "../utils/api";
 import { useHistory } from "react-router-dom";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 function Register() {
   const [firstName, setFirstName] = useState([]);
@@ -39,6 +41,9 @@ function Register() {
       });
   };
   return (
+    <>
+    <Navbar />
+    <div className="regisBody">
     <div className="container register">
         
   <div className="row">
@@ -188,8 +193,9 @@ function Register() {
     </div>
   </div>
 </div>
-
-        
+</div>
+        <Footer />
+        </>
   );
 }
 export default Register;
