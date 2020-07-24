@@ -47,7 +47,17 @@ function Navbar() {
               >
                 Register
               </Link>
+              </li>
+              <li className="nav-item">
+              <Link
+                to="/cart"
+                className={window.location.pathname === "/cart" ? "nav-link active" : "nav-link"}
+              >
+               <i className="fa fa-cart-arrow-down" aria-hidden="true" />
+
+              </Link>
             </li>
+            
         </ul>
       </div>
     </div>

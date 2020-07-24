@@ -1,8 +1,8 @@
 import React from 'react';
 import Footer from "../components/Footer";
 import NavWhite from "../components/WhiteNav";
-import ServCards from '../components/ServCards';
-
+import Cart from '../components/Cart';
+import Credit from '../components/Credit';
 
 
 function Services () {
@@ -12,7 +12,8 @@ function Services () {
 
 <div className="memberBody">
 <NavWhite />
-      <ServCards />
+      <Cart />
+      <Credit />
       </div>
 <Footer />
 </>

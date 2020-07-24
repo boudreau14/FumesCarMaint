@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import api from "../utils/api";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import NavWhite from "../components/WhiteNav";
 
 function Register() {
   const [firstName, setFirstName] = useState([]);
@@ -44,7 +44,7 @@ function Register() {
     <>
     
     <div className="regisBody">
-    <Navbar />
+    <NavWhite />
     <div className="container register">
         
   <div className="row">
@@ -57,7 +57,7 @@ function Register() {
       
       <p>You are 30 seconds away from requesting service!</p>
       
-      <input type="submit" name defaultValue="Login" />
+      <input type="submit" defaultValue="Login" />
       
       <br />
       
@@ -179,14 +179,20 @@ function Register() {
                 onChange={(e) => setState(e.target.value)}
                 />
               </div>
-              
+              <Link
+              to="/member"
+              className={window.location.pathname === "/Member" ? "nav-link active" : "nav-link text-dark"}
+            >
               <button 
               type="submit" 
               className="btnRegister" 
               value="Register"
               onClick={registerSubmit}
-              >
-                  Register</button>
+              
+              
+            
+                  >Register</button> 
+                  </Link>
             </div>
           </div>
         </div>

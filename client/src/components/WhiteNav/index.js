@@ -26,7 +26,7 @@ function WhiteNav() {
             </li>
             <li className="nav-item">
               <Link
-                to="/about"
+                to="/member"
                 className={window.location.pathname === "/member" ? "nav-link active" : "nav-link text-white"}
               >
                 Member
@@ -46,6 +46,15 @@ function WhiteNav() {
                 className={window.location.pathname === "/register" ? "nav-link active" : "nav-link text-black"}
               >
                 Register
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/cart"
+                className={window.location.pathname === "/cart" ? "nav-link active" : "nav-link"}
+              >
+               <i className="fa fa-cart-arrow-down" aria-hidden="true" />
+
               </Link>
             </li>
         </ul>

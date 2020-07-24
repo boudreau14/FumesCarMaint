@@ -348,23 +348,26 @@ input:focus {
 
 }
 
-.mainList li {
-	list-style: none;
-	margin: 20px auto;
-
-}
-git 
-
-
-.mainList {
-	margin: auto 10%;
+.logo-small::before {
+	font-size: 50px;
 }
 
+.logo-small {
+	color: #FFC312;
+	
+	
+}
 
-#center {
-	display: flex;
-	justify-content: center;
+.logo {
+	color: #FFC312;
+	font-size: 200px;
+}
 
+@media screen and (max-width: 768px) {
+	.col-sm-4 {
+		text-align: center;
+		margin: 25px 0;
+	}
 }
 
 /* HOW IT WORKS SECTION */
