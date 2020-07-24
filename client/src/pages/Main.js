@@ -102,45 +102,47 @@ function Main() {
           </div>     
         </div>
 
-        <div className="container-fluid" id="center">
-          <div className="row">
-            <div className="col-12">
-              <h4>Our Main Services</h4>
-              <ul className="mainList">
-                <li>
-                  <strong>Oil Change -</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et
-                  dolore
-                  magna aliqua.
-                </li>
-                <li>
-                  <strong>Brake Service -</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et
-                  dolore
-                  magna aliqua.
-                </li>
-                <li>
-                  <strong>Tire Service -</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et
-                  dolore
-                  magna aliqua. "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                  ut labore et
-                  dolore
-                  magna aliqua.
-                </li>
-                <li>
-                  <strong>And More!</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et
-                  dolore
-                  magna aliqua. "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                  ut labore et
-                  dolore
-                  magna aliqua.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <div className="container-fluid text-center" id="serviceMain">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br />
+  <div className="row">
+    <div className="col-sm-4">
+      <span className="fa fa-filter logo-small" />
+      <h4>Oil &amp; Fluids</h4>
+      <p>Comes with our spill free guarantee!</p>
+    </div>
+    <div className="col-sm-4">
+      <span className="fa fa-unlock-alt logo-small" />
+      <h4>Lock Service</h4>
+      <p>Locked your keys in your car? Same.</p>
+    </div>
+    <div className="col-sm-4">
+      <span className="fa fa-cloud logo-small" />
+      <h4>Filters</h4>
+      <p>Replacing old filters for new ones</p>
+    </div>
+  </div>
+  <br /><br />
+  <div className="row">
+    <div className="col-sm-4">
+      <span className="fa fa-battery-three-quarters logo-small" />
+      <h4>Batteries</h4>
+      <p>From inspection to replacement</p>
+    </div>
+    <div className="col-sm-4">
+      <span className="fa fa-hand-paper-o logo-small" />
+      <h4>Brakes</h4>
+      <p>Inspecting your pads to replacing them</p>
+    </div>
+    <div className="col-sm-4">
+      <span className="fa fa-car logo-small" />
+      <h4>Tires</h4>
+      <p>Plugging leaks, replacing flats, or even rotations!</p>
+    </div>
+  </div>
+</div>
+
       </section>
 <div className="parallax">
 

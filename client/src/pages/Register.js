@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import api from "../utils/api";
 import { useHistory, Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import NavWhite from "../components/WhiteNav";
 
 function Register() {
   const [firstName, setFirstName] = useState([]);
@@ -44,7 +44,7 @@ function Register() {
     <>
     
     <div className="regisBody">
-    <Navbar />
+    <NavWhite />
     <div className="container register">
         
   <div className="row">

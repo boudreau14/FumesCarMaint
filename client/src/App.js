@@ -10,7 +10,7 @@ import Main from "./pages/Main";
 import Login from "./pages/Login";
 import Services from "./pages/Services";
 import Member from "./pages/Member"
-
+import Cart from "./pages/Cart"
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/services" component={Services} />
           <Route exact path="/member" component={Member} />
-
+          <Route exact path="/Cart" component={Cart} />
        
         
         

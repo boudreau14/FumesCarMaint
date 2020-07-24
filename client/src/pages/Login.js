@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import api from "../utils/api";
 import { useHistory } from "react-router-dom";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import NavWhite from "../components/WhiteNav";
 
 function Login() {
   const [email, setEmail] = useState([]);
@@ -27,7 +27,7 @@ function Login() {
     <>
     
     <div className="logBody">
-    <Navbar />
+    <NavWhite />
    <form>
   <div className="container register">
     <div className="row">
