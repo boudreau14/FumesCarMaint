@@ -1,14 +1,14 @@
 import React from 'react';
 import Table from "../components/Table";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-
+import NavWhite from "../components/WhiteNav";
 
 function Members () {
     return (
       <>
-      <Navbar />
+      
     <div className="memberBody">
+    <NavWhite />
         <Table></Table>
     </div>  
       <Footer />

@@ -5,7 +5,7 @@ import "./style.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark">
     <div className="container">
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
         <span className="navbar-toggler-icon" />
@@ -18,7 +18,7 @@ function Navbar() {
                 className={
                   window.location.pathname === "/" || window.location.pathname === "/about"
                     ? "nav-link active"
-                    : "nav-link"
+                    : "nav-link text-dark"
                 }
               >
                 Home
@@ -26,8 +26,8 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/about"
-                className={window.location.pathname === "/Member" ? "nav-link active" : "nav-link"}
+                to="/member"
+                className={window.location.pathname === "/Member" ? "nav-link active" : "nav-link text-dark"}
               >
                 Member
               </Link>
@@ -35,7 +35,7 @@ function Navbar() {
             <li className="nav-item">
               <Link
                 to="/services"
-                className={window.location.pathname === "/Services" ? "nav-link active" : "nav-link"}
+                className={window.location.pathname === "/Services" ? "nav-link active" : "nav-link text-dark"}
               >
                 Services
               </Link>
@@ -47,7 +47,17 @@ function Navbar() {
               >
                 Register
               </Link>
+              </li>
+              <li className="nav-item">
+              <Link
+                to="/cart"
+                className={window.location.pathname === "/cart" ? "nav-link active" : "nav-link"}
+              >
+               <i className="fa fa-cart-arrow-down" aria-hidden="true" />
+
+              </Link>
             </li>
+            
         </ul>
       </div>
     </div>
