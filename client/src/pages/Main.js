@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import api from "../utils/api";
+import { useHistory } from "react-router-dom";
 import newRegis from "../assets/newRegis.png";
 import newForm from "../assets/newForm.png";
 import newMech from "../assets/newMech.png";
@@ -8,6 +10,23 @@ import Footer from "../components/Footer";
 import NavWhite from "../components/WhiteNav"
 
 function Main() {
+  const [email, setEmail] = useState([]);
+  const [password, setPassword] = useState([]);
+
+  let history = useHistory();
+
+  const logInSubmit = (e) => {
+    e.preventDefault();
+    api
+      .logIn({
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res.data);
+        history.push("/member");
+      });
+  };
     return (
       <>
       <HERO backgroundImage="https://images.unsplash.com/photo-1508171997656-fdf7cf6c4df9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
@@ -34,19 +53,20 @@ function Main() {
                     <div className="input-group-prepend">
                       <span className="input-group-text"><i className="fas fa-user" /></span>
                     </div>
-                    <input type="text" className="form-control" placeholder="username" />
+                    <input type="text" className="form-control" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                   </div>
                   <div className="input-group form-group">
                     <div className="input-group-prepend">
                       <span className="input-group-text"><i className="fas fa-key" /></span>
                     </div>
-                    <input type="password" className="form-control" placeholder="password" />
+                    <input type="password" className="form-control" placeholder="password" onChange={(e) => setPassword(e.target.value)}
+ />
                   </div>
                   <div className="align-items-center remember">
                     <input type="checkbox" />Remember Me
                   </div>
                   <div className="form-group">
-                    <input type="submit" defaultValue="Login" className="btn float-right login_btn" />
+                    <input type="submit" onClick={logInSubmit} defaultValue="Login" className="btn float-right login_btn" />
                   </div>
                 </form>
               </div>

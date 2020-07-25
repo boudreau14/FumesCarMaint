@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./style.css";
 
 function ServCards() {
@@ -42,9 +41,11 @@ function ServCards() {
     },
   ];
 
-  function addCart(e) {
-    console.log(e);
-  }
+  const addCart = (e) => {
+    let cart = [];
+    cart.push(e);
+    console.log(cart);
+  };
 
   return (
     <section className="serviceMain pt-5">
@@ -57,10 +58,10 @@ function ServCards() {
                 <p className="card-text">{ServArr[0].description}</p>
                 <p className="card-text">{ServArr[0].price}</p>
                 <a
-                  href="/services/1"
+                  href="#"
                   data-product="0"
                   className="btn btn-primary"
-                  onClick={addCart(0)}
+                  onClick={() => addCart(ServArr[0].title)}
                 >
                   Add to Cart
                 </a>
@@ -73,7 +74,12 @@ function ServCards() {
                 <h5 className="card-title">{ServArr[1].title}</h5>
                 <p className="card-text">{ServArr[1].description}</p>
                 <p className="card-text">{ServArr[1].price}</p>
-                <a href="#" data-product="1" className="btn btn-primary">
+                <a
+                  href="#"
+                  data-product="1"
+                  onClick={() => addCart(ServArr[1].title)}
+                  className="btn btn-primary"
+                >
                   Add to Cart
                 </a>
               </div>
@@ -85,7 +91,12 @@ function ServCards() {
                 <h5 className="card-title">{ServArr[2].title}</h5>
                 <p className="card-text">{ServArr[2].description}</p>
                 <p className="card-text">{ServArr[2].price}</p>
-                <a href="#" data-product="2" className="btn btn-primary">
+                <a
+                  href="#"
+                  data-product="2"
+                  onClick={() => addCart(ServArr[2].title)}
+                  className="btn btn-primary"
+                >
                   Add to Cart
                 </a>
               </div>
@@ -99,7 +110,12 @@ function ServCards() {
                 <h5 className="card-title">{ServArr[3].title}</h5>
                 <p className="card-text">{ServArr[3].description}</p>
                 <p className="card-text">{ServArr[3].price}</p>
-                <a href="#" data-product="3" className="btn btn-primary">
+                <a
+                  href="#"
+                  data-product="3"
+                  onClick={() => addCart(ServArr[3].title)}
+                  className="btn btn-primary"
+                >
                   Add to Cart
                 </a>
               </div>
@@ -111,7 +127,12 @@ function ServCards() {
                 <h5 className="card-title">{ServArr[4].title}</h5>
                 <p className="card-text">{ServArr[4].description}</p>
                 <p className="card-text">{ServArr[4].price}</p>
-                <a href="#" data-product="4" className="btn btn-primary">
+                <a
+                  href="#"
+                  data-product="4"
+                  onClick={() => addCart(ServArr[4].title)}
+                  className="btn btn-primary"
+                >
                   Add to Cart
                 </a>
               </div>
@@ -123,7 +144,12 @@ function ServCards() {
                 <h5 className="card-title">{ServArr[5].title}</h5>
                 <p className="card-text">{ServArr[5].description}</p>
                 <p className="card-text">{ServArr[5].price}</p>
-                <a href="#" data-product="5" className="btn btn-primary">
+                <a
+                  href="#"
+                  data-product="5"
+                  onClick={() => addCart(ServArr[5].title)}
+                  className="btn btn-primary"
+                >
                   Add to Cart
                 </a>
               </div>
