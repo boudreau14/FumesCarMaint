@@ -28,19 +28,15 @@ router.get("/services", (req, res) => {
   return res.json(data.services);
 });
 
-router.post("/services", (req, res) => {
-  let services = [], id = null;
-  let cart = JSON.parse(req.body.cart);
-  if (!cart) return res.json(services)
-  for (var i=0; i < data.services.length; i++) {
-    id = data.services[i].id.toString();
-    if (cart.hasOwnProperty(id)) {
-      data.services[i].qty = cart[id]
-      services.push(data.services[i]);
-    }
-  }
-  return res.json(services);
+router.get("/services/:id", (req, res) => {
+  event.preventDefault();
+  console.log("Worked!")
 } )
 
+//CHECKOUT ROUTES
+router.post("/checkout", (req, res) => {
+  console.log("Working checkout!")
+  db.Checkout.create(req.body)
+})
 
 module.exports = router;

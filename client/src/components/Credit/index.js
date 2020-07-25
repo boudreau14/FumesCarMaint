@@ -1,7 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
+import api from "../../utils/api";
 import "./style.css";
 
 function Credit() {
+  const [username, setUsername] = useState([]);
+  const [cardnumber, setCardnumber] = useState([]);
+  const [cardMonth, setCardMonth] = useState([]);
+  const [cardYear, setCardYear] = useState([]);
+  const [cardSec, setCardSec] = useState([]);
+
+  const checkoutSubmit = (e) => {
+    e.preventDefault();
+    api
+    .checkout({
+      username: username,
+      cardnumber: cardnumber,
+      cardMonth: cardMonth,
+      cardYear: cardYear,
+      cardSec: cardSec
+    })
+    .then((res) => {
+      console.log("CHECKOUT WORKED")
+    })
+  }
+
   return (
     <div className="container py-5">
   <div className="row">
@@ -25,12 +47,12 @@ function Credit() {
             <form role="form">
               <div className="form-group">
                 <label htmlFor="username">Full name (on the card)</label>
-                <input type="text" name="username" placeholder="Jason Doe" required className="form-control" />
+                <input type="text" name="username" placeholder="Jason Doe" onChange={(e) => setUsername(e.target.value)} required className="form-control" />
               </div>
               <div className="form-group">
                 <label htmlFor="cardNumber">Card number</label>
                 <div className="input-group">
-                  <input type="text" name="cardNumber" placeholder="Your card number" className="form-control" required />
+                  <input type="text" name="cardNumber" placeholder="Your card number" onChange={(e) => setCardnumber(e.target.value)} className="form-control" required />
                   <div className="input-group-append">
                     <span className="input-group-text text-muted">
                       <i className="fa fa-cc-visa mx-1" />
@@ -45,8 +67,8 @@ function Credit() {
                   <div className="form-group">
                     <label><span className="hidden-xs">Expiration</span></label>
                     <div className="input-group">
-                      <input type="number" placeholder="MM" name className="form-control" required />
-                      <input type="number" placeholder="YY" name className="form-control" required />
+                      <input type="number" placeholder="MM" onChange={(e) => setCardMonth(e.target.value)} name="cardMonth" className="form-control" required />
+                      <input type="number" placeholder="YY" onChange={(e) => setCardYear(e.target.value)} name="cardYear" className="form-control" required />
                     </div>
                   </div>
                 </div>
@@ -55,11 +77,11 @@ function Credit() {
                     <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                       <i className="fa fa-question-circle" />
                     </label>
-                    <input type="text" required className="form-control" />
+                    <input type="text" required name="cardSec" onChange={(e) => setCardSec(e.target.value)} className="form-control" />
                   </div>
                 </div>
               </div>
-              <button type="button" className="subscribe btn btn-primary btn-block rounded-pill shadow-sm">
+              <button type="button" onClick={checkoutSubmit} className="subscribe btn btn-primary btn-block rounded-pill shadow-sm">
                 Confirm
               </button>
             </form>

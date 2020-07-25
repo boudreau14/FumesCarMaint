@@ -11,6 +11,10 @@ export default {
 
     logOut: () => {
         return axios.get("/api/logout");
+    },
+
+    checkout: (checkoutData) => {
+        return axios.post("/api/checkout", checkoutData);
     }
 
 }
