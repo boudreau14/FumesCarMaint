@@ -1,3 +1,5 @@
+var bcrypt = require("bcryptjs");
+
 module.exports = function (sequelize, DataTypes) {
     var Checkout = sequelize.define("Checkout", {
       username: {
@@ -5,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
           allowNull: false
       },
       cardnumber: {
-          type: DataTypes.INTEGER,
+          type: DataTypes.STRING,
           allowNull: false
       },
       cardMonth: {
@@ -17,10 +19,24 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false
       },
       cardSec: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
       }
     });
+
+    Checkout.addHook("beforeCreate", function (checkout) {
+      checkout.cardnumber = bcrypt.hashSync(
+        checkout.cardnumber,
+        bcrypt.genSaltSync(10),
+        null
+      );
+      checkout.cardSec = bcrypt.hashSync(
+        checkout.cardSec,
+        bcrypt.genSaltSync(10),
+        null
+      );
+    });
+
   
     return Checkout;
   };
