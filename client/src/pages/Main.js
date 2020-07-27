@@ -122,7 +122,7 @@ function Main() {
           </div>     
         </div>
 
-    <div className="container-fluid text-center" id="serviceMain">
+    <div className="container-fluid text-center pt-5" id="serviceMain">
   <h2>SERVICES</h2>
   <h4>What we offer</h4>
   <br />

@@ -1,6 +1,6 @@
 {
     "development": {
-        "username": "Derek",
+        "username": "root",
         "password": "Mk4&z644!",
         "database": "carservice_db",
         "host": "127.0.0.1",
