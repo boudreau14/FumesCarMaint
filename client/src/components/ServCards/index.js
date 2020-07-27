@@ -49,114 +49,109 @@ function ServCards() {
 
   return (
     <section className="serviceMain pt-5">
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <div className="card" id="servCard" style={{ width: "18rem" }}>
+      <div className="container" id="cardGrid">
+       
+            <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h5 className="card-title">{ServArr[0].title}</h5>
+                <h2 className="card-title" id="cth2">{ServArr[0].title}</h2>
                 <p className="card-text">{ServArr[0].description}</p>
-                <p className="card-text">{ServArr[0].price}</p>
-                <a
+                <p className="card-text">$ {ServArr[0].price}</p>
+                
+                <i
                   href="#"
                   data-product="0"
-                  className="btn btn-primary"
+                  className="card-link fa fa-cart-plus"
                   onClick={() => addCart(ServArr[0].title)}
                 >
                   Add to Cart
-                </a>
+                </i>
               </div>
             </div>
-          </div>
-          <div className="col">
-            <div className="card" id="servCard" style={{ width: "18rem" }}>
+          
+          
+            <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h5 className="card-title">{ServArr[1].title}</h5>
+                <h2 className="card-title" id="cth2">{ServArr[1].title}</h2>
                 <p className="card-text">{ServArr[1].description}</p>
-                <p className="card-text">{ServArr[1].price}</p>
-                <a
+                <p className="card-text">$ {ServArr[1].price}</p>
+                <i
                   href="#"
                   data-product="1"
                   onClick={() => addCart(ServArr[1].title)}
-                  className="btn btn-primary"
+                  className="card-link fa fa-cart-plus"
                 >
-                  Add to Cart
-                </a>
+                   Add to Cart
+                </i>
               </div>
             </div>
-          </div>
-          <div className="col">
-            <div className="card" id="servCard" style={{ width: "18rem" }}>
+        
+          
+            <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h5 className="card-title">{ServArr[2].title}</h5>
+                <h2 className="card-title" id="cth2">{ServArr[2].title}</h2>
                 <p className="card-text">{ServArr[2].description}</p>
-                <p className="card-text">{ServArr[2].price}</p>
-                <a
+                <p className="card-text">$ {ServArr[2].price}</p>
+                <i
                   href="#"
                   data-product="2"
                   onClick={() => addCart(ServArr[2].title)}
-                  className="btn btn-primary"
+                  className="card-link fa fa-cart-plus"
                 >
                   Add to Cart
-                </a>
+                </i>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <div className="card" id="servCard" style={{ width: "18rem" }}>
+         
+        
+            <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h5 className="card-title">{ServArr[3].title}</h5>
+                <h2 className="card-title" id="cth2">{ServArr[3].title}</h2>
                 <p className="card-text">{ServArr[3].description}</p>
-                <p className="card-text">{ServArr[3].price}</p>
-                <a
+                <p className="card-text">$ {ServArr[3].price}</p>
+                <i
                   href="#"
                   data-product="3"
                   onClick={() => addCart(ServArr[3].title)}
-                  className="btn btn-primary"
+                  className="card-link fa fa-cart-plus"
                 >
                   Add to Cart
-                </a>
+                </i>
               </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card" id="servCard" style={{ width: "18rem" }}>
+           </div>
+          
+            <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h5 className="card-title">{ServArr[4].title}</h5>
+                <h2 className="card-title" id="cth2">{ServArr[4].title}</h2>
                 <p className="card-text">{ServArr[4].description}</p>
-                <p className="card-text">{ServArr[4].price}</p>
-                <a
+                <p className="card-text">$ {ServArr[4].price}</p>
+                <i
                   href="#"
                   data-product="4"
                   onClick={() => addCart(ServArr[4].title)}
-                  className="btn btn-primary"
+                  className="card-link fa fa-cart-plus"
                 >
                   Add to Cart
-                </a>
+                </i>
               </div>
             </div>
-          </div>
-          <div className="col">
-            <div className="card" id="servCard" style={{ width: "18rem" }}>
+          
+            <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h5 className="card-title">{ServArr[5].title}</h5>
+                <h2 className="card-title" id="cth">{ServArr[5].title}</h2>
                 <p className="card-text">{ServArr[5].description}</p>
-                <p className="card-text">{ServArr[5].price}</p>
-                <a
+                <p className="card-text">$ {ServArr[5].price}</p>
+                <i
                   href="#"
                   data-product="5"
                   onClick={() => addCart(ServArr[5].title)}
-                  className="btn btn-primary"
+                  className="card-link fa fa-cart-plus"
                 >
                   Add to Cart
-                </a>
+                </i>
               </div>
             </div>
+         
           </div>
-        </div>
-      </div>
     </section>
   );
 }
