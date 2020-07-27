@@ -2,13 +2,12 @@
 
 // import "./style.css";
 
-// function Feedback() {
+// function Table() {
 //     return (
 
 
 
-
-//     )
+// );
 // }
 
-// export default Feedback;
+// export default Table;
