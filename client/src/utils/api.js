@@ -15,6 +15,10 @@ export default {
 
     checkout: (checkoutData) => {
         return axios.post("/api/checkout", checkoutData);
+    },
+
+    feedback: (feedbackData) => {
+        return axios.post("/api/feedback", feedbackData);
     }
 
 }
