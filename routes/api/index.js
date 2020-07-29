@@ -28,9 +28,10 @@ router.get("/logout", function (req, res) {
 
 //SERVICES ROUTES
 router.get("/services", (req, res) => {
- let services = Services.findAll();
-//  console.log(services)
- res.json(services); 
+ db.Services.findAll()
+ .then(dbModel => {
+   res.json(dbModel)
+ })
 });
 
 router.get("/services/:id", (req, res) => {
@@ -39,10 +40,17 @@ router.get("/services/:id", (req, res) => {
 } )
 
 //CHECKOUT ROUTES
-router.post("/checkout", (req, res) => {
+router.post("/pushCart", (req, res) => {
   console.log("Working checkout!")
-  db.Checkout.create(req.body)
+  db.Cart.create(req.body)
 })
+
+router.get("/pullCart", (req, res) => {
+  db.Cart.findAll()
+  .then(dbModel => {
+    res.json(dbModel)
+  })
+ });
 
 //FEEDBACK ROUTES
 router.post("/feedback", (req, res) => {

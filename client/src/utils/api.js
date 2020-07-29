@@ -17,12 +17,20 @@ export default {
         return axios.post("/api/checkout", checkoutData);
     },
 
-    services: (serviceData) => {
-        return axios.post("/api/services". serviceData);
+    services: () => {
+        return axios.get("/api/services");
     },
   
       feedback: (feedbackData) => {
         return axios.post("/api/feedback", feedbackData);
+    },
+
+    pushCart: (cartData) => {
+        return axios.post("/api/pushCart", cartData);
+    },
+
+    pullCart: () => {
+        return axios.get("/api/pullCart");
     }
 
 }

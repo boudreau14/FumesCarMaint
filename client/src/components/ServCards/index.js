@@ -1,14 +1,23 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "./style.css";
+import api from "../../utils/api";
 
 
 
 function ServCards() {
 
-  useEffect(() => {
+  const [serviceState, setServiceState] = useState([]);
 
-    console.log("any old string")
-  },[])
+  useEffect(() => {
+    api.services()
+    .then(res => {
+      setServiceState(res.data)
+      // ServiceArr = res.data;
+      console.log(serviceState);
+    })
+  }, [])
+
+  
 
   var ServArr = [
     {
@@ -49,38 +58,52 @@ function ServCards() {
     },
   ];
 
-  const addCart = (e) => {
-    let cart = [];
-    cart.push(e);
-    console.log(cart);
+  let cart = [];
+
+  const addCart = (name, value, description) => {
+    cart.push(name, value, description);
+    // console.log(cart);
+    api
+    .pushCart({
+      name: name,
+      value: value,
+      description: description
+    })
+    .then((res) => {
+      console.log("ADD CART WORKED")
+    })
   };
 
   return (
     <section className="serviceMain pt-5">
-      <div className="container" id="cardGrid">
+      {serviceState ? <div className="container" id="cardGrid">
        
-           {ServArr.map((allServices) => {
-             return (
-              <React.Fragment>
-                 <div className="card-box" id="servCard" style={{ width: "18rem" }}>
-              <div className="card-body">
-                <h2 className="card-title">{allServices.title}</h2>
-                <p className="card-text">{allServices.description}</p>
-                <p className="card-text">$ {allServices.price}</p>
-                
-                <i
-                  href="#"
-                  data-product="0"
-                  className="card-link fa fa-cart-plus"
-                  onClick={() => addCart(allServices.title)}
-                >
-                  Add to Cart
-                </i>
-              </div>
-            </div>
-              </React.Fragment>
-             )
-           })}
+       {serviceState.map((allServices) => {
+         return (
+          <React.Fragment>
+             <div className="card-box" id="servCard" style={{ width: "18rem" }}>
+          <div className="card-body">
+            <h2 className="card-title">{allServices.name}</h2>
+            <p className="card-text">{allServices.description}</p>
+            <p className="card-text">$ {allServices.value}</p>
+            
+            <i
+              href="#"
+              data-product="0"
+              className="card-link fa fa-cart-plus"
+              onClick={() => addCart(allServices.name, allServices.value, allServices.description)}
+            >
+              Add to Cart
+            </i>
+          </div>
+        </div>
+          </React.Fragment>
+         )
+       })}
+       </div> : <div></div>
+
+
+      }
           
           
             {/* <div className="card-box" id="servCard" style={{ width: "18rem" }}>
@@ -165,7 +188,6 @@ function ServCards() {
               </div>
           </div> */}
          
-          </div> 
     </section>
   );
 }
