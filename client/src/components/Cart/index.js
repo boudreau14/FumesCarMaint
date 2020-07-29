@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 
+
+
 function Cart() {
   return (
     <div>
@@ -24,14 +26,14 @@ function Cart() {
             <img className="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width={120} height={80} />
           </div>
           <div className="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-            <h4 className="product-name"><strong>Product Name</strong></h4>
+            <h4 className="product-name"><strong>Product Title</strong></h4>
             <h4>
-              <small>Product description</small>
+              <small>Product Desc.</small>
             </h4>
           </div>
           <div className="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
             <div className="col-3 col-sm-3 col-md-6 text-md-right" style={{paddingTop: 5}}>
-              <h6><strong>25.00 <span className="text-muted">x</span></strong></h6>
+              <h6><strong>Price<span className="text-muted">x</span></strong></h6>
             </div>
             <div className="col-4 col-sm-4 col-md-4">
               <div className="quantity">
