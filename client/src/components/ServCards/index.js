@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./style.css";
 
+
+
 function ServCards() {
+
+  useEffect(() => {
+
+    console.log("any old string")
+  },[])
+
   var ServArr = [
     {
       id: 1,
@@ -51,27 +59,33 @@ function ServCards() {
     <section className="serviceMain pt-5">
       <div className="container" id="cardGrid">
        
-            <div className="card-box" id="servCard" style={{ width: "18rem" }}>
+           {ServArr.map((allServices) => {
+             return (
+              <React.Fragment>
+                 <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h2 className="card-title" id="cth2">{ServArr[0].title}</h2>
-                <p className="card-text">{ServArr[0].description}</p>
-                <p className="card-text">$ {ServArr[0].price}</p>
+                <h2 className="card-title">{allServices.title}</h2>
+                <p className="card-text">{allServices.description}</p>
+                <p className="card-text">$ {allServices.price}</p>
                 
                 <i
                   href="#"
                   data-product="0"
                   className="card-link fa fa-cart-plus"
-                  onClick={() => addCart(ServArr[0].title)}
+                  onClick={() => addCart(allServices.title)}
                 >
                   Add to Cart
                 </i>
               </div>
             </div>
+              </React.Fragment>
+             )
+           })}
           
           
-            <div className="card-box" id="servCard" style={{ width: "18rem" }}>
+            {/* <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h2 className="card-title" id="cth2">{ServArr[1].title}</h2>
+                <h2 className="card-title"> {ServArr[1].title}</h2>
                 <p className="card-text">{ServArr[1].description}</p>
                 <p className="card-text">$ {ServArr[1].price}</p>
                 <i
@@ -88,7 +102,7 @@ function ServCards() {
           
             <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h2 className="card-title" id="cth2">{ServArr[2].title}</h2>
+                <h2 className="card-title"> {ServArr[2].title}</h2>
                 <p className="card-text">{ServArr[2].description}</p>
                 <p className="card-text">$ {ServArr[2].price}</p>
                 <i
@@ -105,7 +119,7 @@ function ServCards() {
         
             <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h2 className="card-title" id="cth2">{ServArr[3].title}</h2>
+                <h2 className="card-title"> {ServArr[3].title}</h2>
                 <p className="card-text">{ServArr[3].description}</p>
                 <p className="card-text">$ {ServArr[3].price}</p>
                 <i
@@ -121,7 +135,7 @@ function ServCards() {
           
             <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h2 className="card-title" id="cth2">{ServArr[4].title}</h2>
+                <h2 className="card-title"> {ServArr[4].title}</h2>
                 <p className="card-text">{ServArr[4].description}</p>
                 <p className="card-text">$ {ServArr[4].price}</p>
                 <i
@@ -137,7 +151,7 @@ function ServCards() {
           
             <div className="card-box" id="servCard" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h2 className="card-title" id="cth">{ServArr[5].title}</h2>
+                <h2 className="card-title">{ServArr[5].title}</h2>
                 <p className="card-text">{ServArr[5].description}</p>
                 <p className="card-text">$ {ServArr[5].price}</p>
                 <i
@@ -149,9 +163,9 @@ function ServCards() {
                   Add to Cart
                 </i>
               </div>
-            </div>
+          </div> */}
          
-          </div>
+          </div> 
     </section>
   );
 }

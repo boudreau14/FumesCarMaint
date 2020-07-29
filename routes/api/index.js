@@ -1,6 +1,8 @@
 const db = require("../../models");
 const passport = require("../../config/passport")
 const router = require("express").Router();
+const Services = require("../../models/services")
+
 
 router.post("/register", function (req, res) {
   db.User.create(req.body).then((dbUser) => {
@@ -19,13 +21,16 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
 });
 
 router.get("/logout", function (req, res) {
-    req.logout();
+  
+  req.logout();
     res.json({message: "You are logged out!"})
 });
 
 //SERVICES ROUTES
 router.get("/services", (req, res) => {
-  return res.json(data.services);
+ let services = Services.findAll();
+//  console.log(services)
+ res.json(services); 
 });
 
 router.get("/services/:id", (req, res) => {

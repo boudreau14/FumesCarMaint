@@ -15,6 +15,10 @@ export default {
 
     checkout: (checkoutData) => {
         return axios.post("/api/checkout", checkoutData);
+    },
+
+    services: (serviceData) => {
+        return axios.post("/api/services". serviceData);
     }
 
 }
