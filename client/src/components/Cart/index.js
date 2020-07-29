@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useEffect, SetState, useState} from "react";
 import "./style.css";
+import api from "../../utils/api";
 
 
 
 function Cart() {
+  const [cartState, setCartState] = useState([]);
+
+  useEffect(() => {
+    api.pullCart()
+    .then(res => {
+      setCartState(res.data)
+    })
+  }, [])
+
   return (
     <div>
   <div className="text-center text-white pb-4 pt-5">
@@ -21,7 +31,35 @@ function Cart() {
       <div className="card-body">
        
         {/* PRODUCT */}
-        <div className="row">
+        {cartState ? <div className="container" id="cardGrid">
+       
+       {cartState.map((allCart) => {
+         return (
+          <React.Fragment>
+             <div className="card-box" id="servCard" style={{ width: "18rem" }}>
+          <div className="card-body">
+            <h2 className="card-title">{allCart.name}</h2>
+            <p className="card-text">{allCart.description}</p>
+            <p className="card-text">$ {allCart.value}</p>
+            
+            <i
+              href="#"
+              data-product="0"
+              className="card-link fa fa-cart-plus"
+              // onClick={() => addCart(allCart.name, allCart.value, allCart.description)}
+            >
+              Add to Cart
+            </i>
+          </div>
+        </div>
+          </React.Fragment>
+         )
+       })}
+       </div> : <div></div>
+
+
+      }
+        {/* <div className="row">
           <div className="col-12 col-sm-12 col-md-2 text-center">
             <img className="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width={120} height={80} />
           </div>
@@ -48,7 +86,7 @@ function Cart() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   </div></div>
