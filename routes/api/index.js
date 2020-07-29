@@ -44,4 +44,10 @@ router.post("/checkout", (req, res) => {
   db.Checkout.create(req.body)
 })
 
+//FEEDBACK ROUTES
+router.post("/feedback", (req, res) => {
+  console.log("Working feedback!")
+  db.Feedback.create(req.body)
+})
+
 module.exports = router;

@@ -19,6 +19,10 @@ export default {
 
     services: (serviceData) => {
         return axios.post("/api/services". serviceData);
+    },
+  
+      feedback: (feedbackData) => {
+        return axios.post("/api/feedback", feedbackData);
     }
 
 }
