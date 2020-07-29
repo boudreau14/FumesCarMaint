@@ -1,10 +1,17 @@
 /* SERVICES PAGES */
 
+.serviceMain{
+	padding-bottom: 5%;
+	cursor: pointer;
+}
+
 #cardGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    max-width: 1500px;
+    grid-gap: 30px;
+	max-width: 1500px;
+
+	justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -32,13 +39,14 @@
 
 
 #servCard {
-	margin: 6%;
+	margin: auto;
 	text-align: center;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
-	width: 40%;
 	height: 300px;
 	background-color: #ffffffc2;
+	justify-content: center;
+	
 }
 
 

@@ -87,3 +87,10 @@
 .btnG:hover:before {
 	left: 100%;
 }
+
+@media (max-width: 414px) {
+	.getService {
+		padding-top: 15%;
+	}
+
+}

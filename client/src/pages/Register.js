@@ -37,7 +37,7 @@ function Register() {
       })
       .then((res) => {
         console.log(res.data);
-        history.push("/");
+        history.push("/Member");
       });
   };
   return (
@@ -56,8 +56,18 @@ function Register() {
       <h3>Welcome</h3>
       
       <p>You are 30 seconds away from requesting service!</p>
-      
-      <input type="submit" defaultValue="Login" />
+
+      <br />
+      <p>Already registered?</p>
+      <a>
+      <Link
+    to="/Login"
+    className={window.location.pathname === "/Login"}  
+    
+    >
+        Login
+    </Link>
+    </a>
       
       <br />
       

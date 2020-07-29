@@ -42,14 +42,6 @@ function Cart() {
             <p className="card-text">{allCart.description}</p>
             <p className="card-text">$ {allCart.value}</p>
             
-            <i
-              href="#"
-              data-product="0"
-              className="card-link fa fa-cart-plus"
-              // onClick={() => addCart(allCart.name, allCart.value, allCart.description)}
-            >
-              Add to Cart
-            </i>
           </div>
         </div>
           </React.Fragment>

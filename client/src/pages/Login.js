@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import api from "../utils/api";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavWhite from "../components/WhiteNav";
 
@@ -19,7 +19,7 @@ function Login() {
       })
       .then((res) => {
         console.log(res.data);
-        history.push("/");
+        history.push("/Member");
       });
   };
 
@@ -33,8 +33,19 @@ function Login() {
     <div className="row">
       <div className="col-md-3 register-left">
         <img src="https://i.ibb.co/LNpS6vD/iconfinder-wrench-1608741.png" alt="iconfinder-wrench-1608741" border={0} />
-        <h3>Welcome</h3>
-        <p>You are 30 seconds away from requesting service!</p>
+        <h3>Welcome Back</h3>
+        <p>Glad to see you again!</p>
+        <br />
+      <p>Not registered?</p>
+      <a>
+      <Link
+    to="/Register"
+    className={window.location.pathname === "/Register"}  
+    
+    >
+        Register
+    </Link>
+    </a>
       </div>
       <div className="col-md-9 register-right">
         <div className="tab-content" id="myTabContent">
@@ -57,11 +68,16 @@ function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                    />
                 </div>
+                <Link
+              to="/member"
+              className={window.location.pathname === "/Member" ? "nav-link active" : "nav-link text-dark"}
+            >
                 <button type="submit" 
                 className="btnRegister" 
                 value="Login"
                 onClick={logInSubmit}
                 >Login</button>
+                </Link>
               </div>
             </div>
           </div>
