@@ -7,7 +7,7 @@ import newMech from "../assets/newMech.png";
 
 import HERO from "../components/Hero";
 import Footer from "../components/Footer";
-import NavWhite from "../components/WhiteNav"
+import Navbar from "../components/Navbar"
 
 function Main() {
   const [email, setEmail] = useState([]);
@@ -30,7 +30,7 @@ function Main() {
     return (
       <>
       <HERO backgroundImage="https://images.unsplash.com/photo-1508171997656-fdf7cf6c4df9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
-      <NavWhite />
+      <Navbar />
       <div id="landCont">
         <div className="landText" id="height">
           <h1>Fumes</h1>
@@ -84,7 +84,7 @@ function Main() {
       </div>
      
       </HERO>
-      <section className="mainInfo">
+      <section className="mainInfo" id="mainInfo">
         <div className="container-fluid">
           <div className="row">
             <div className="col">
