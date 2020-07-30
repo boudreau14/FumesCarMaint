@@ -1,9 +1,8 @@
 const db = require("../../models");
 const passport = require("../../config/passport")
 const router = require("express").Router();
-const Services = require("../../models/services")
 
-
+//User Routes
 router.post("/register", function (req, res) {
   db.User.create(req.body).then((dbUser) => {
     req.login(dbUser, function (err) {
@@ -26,7 +25,7 @@ router.get("/logout", function (req, res) {
     res.json({message: "You are logged out!"})
 });
 
-//SERVICES ROUTES
+//Services Routes
 router.get("/services", (req, res) => {
  db.Services.findAll()
  .then(dbModel => {
@@ -39,7 +38,7 @@ router.get("/services/:id", (req, res) => {
   console.log("Worked!")
 } )
 
-//CHECKOUT ROUTES
+//Cart Routes
 router.post("/pushCart", (req, res) => {
   console.log("Working checkout!")
   db.Cart.create(req.body)
@@ -52,7 +51,13 @@ router.get("/pullCart", (req, res) => {
   })
  });
 
-//FEEDBACK ROUTES
+ //Checkout Routes
+ router.post("/checkout", (req, res) => {
+   console.log("CHECKOUT!")
+   db.Checkout.create(req.body);
+ })
+
+//Feedback Routes
 router.post("/feedback", (req, res) => {
   console.log("Working feedback!")
   db.Feedback.create(req.body)
