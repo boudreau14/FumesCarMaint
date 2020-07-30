@@ -1,7 +1,7 @@
 {
     "development": {
-        "username": "Derek",
-        "password": "Mk4&z644!",
+        "username": "root",
+        "password": "0hio5082buck3y35Cbus",
         "database": "carservice_db",
         "host": "127.0.0.1",
         "dialect": "mysql"
