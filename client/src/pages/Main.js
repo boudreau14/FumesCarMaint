@@ -72,7 +72,7 @@ function Main() {
               </div>
               <div className="card-footer">
                 <div className="d-flex justify-content-center links">
-                  Don't have an account?<a href="#">Sign Up</a>
+                  Don't have an account?<a href="/register">Sign Up</a>
                 </div>
                 <div className="d-flex justify-content-center">
                   <a href="#">Forgot your password?</a>
@@ -105,9 +105,9 @@ function Main() {
               <div className="col-lg-6 col-xs-12" id="imgAside">
                 <div className="imgAside">
                   <div className="tabs">
-                    <a className="nav-link mbr-fonts-style display-7 active" id="serviceBtn" role="tab" data-toggle="tab" href="/Services">
+                    <a className="nav-link mbr-fonts-style display-7 active" id="serviceBtn" role="tab" data-toggle="tab" href="/services">
                       Services</a>
-                    <a className="nav-link mbr-fonts-style display-7 active" id="regisBtn" role="tab" data-toggle="tab" href="/Register">
+                    <a className="nav-link mbr-fonts-style display-7 active" id="regisBtn" role="tab" data-toggle="tab" href="/register">
                       Register</a>
                   </div>
                   <p> Our mission at Fumes is to give every customer our highlest level of attention to detail, care to their
