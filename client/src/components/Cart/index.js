@@ -1,4 +1,4 @@
-import React, {useEffect, SetState, useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./style.css";
 import api from "../../utils/api";
 
